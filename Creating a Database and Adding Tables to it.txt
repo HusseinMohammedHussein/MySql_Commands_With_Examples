@@ -1,0 +1,71 @@
+-- Get Start With MySQL Commands:
+
+- create database userlogin; //Start to create new Database.
+
+- show databases; //Check database which is created, show all databases.
+	+--------------------+
+	| Database           |
+	+--------------------+
+	| information_schema |
+	| mysql              |
+	| newuser            |
+	| performance_schema |
+	| phpmyadmin         |
+	| test               |
+	+--------------------+ 
+	| +-------------+    |
+	| | userlogin   |    |
+	| +-------------+    |
+	+--------------------+
+========================================================================
+	//start to use my database created.
+- use userlogin; 
+	+----------------------------------------+ 
+	|     				                     |
+	| 	MariaDB [userlogin]> use userlogin;  | 
+	|	Database changed			 		 |
+	|     				 					 |
+	+----------------------------------------+
+========================================================================
+
+	//start to create new table, it's will create into userlogin database;
+- create table register(
+				id int(11) unsigned auto_increment primary key not null,
+				username varchar(50) not null,
+				email varchar(50) not null,
+				passwd varchar(20) not null,
+				phone varchar(11) not null);
+========================================================================	
+	//for check on a register table is created in userlogin database.
+- show tables;
+	+---------------------+
+	| Tables_in_userlogin |
+	+---------------------+
+	| register            |
+	+---------------------+
+========================================================================
+	//show tables contents.
+- desc register; 	
+	+----------+------------------+------+-----+---------+----------------+
+	| Field    | Type             | Null | Key | Default | Extra          |
+	+----------+------------------+------+-----+---------+----------------+
+	| id       | int(11) unsigned | NO   | PRI | NULL    | auto_increment |
+	| username | varchar(50)      | NO   |     | NULL    |                |
+	| email    | varchar(50)      | NO   |     | NULL    |                |
+	| passwd   | varchar(20)      | NO   |     | NULL    |                |
+	| phone    | varchar(11)      | NO   |     | NULL    |                |
+	+----------+------------------+------+-----+---------+----------------+
+========================================================================
+	//insert data into register table
+- insert into registar(id,name, email, phone, passwd) 
+			  values(1, "shs", "shs@gmail.com", "01122334466", "123");
+			  values(2, "omar", "omar@gmail.com", "01122339950", "321");
+========================================================================
+// Query All Data from register table
+- select * from registar;
+	+----+----------+----------------+-------------+-------+
+	| id | username | email          | passwd      | phone |
+	+----+----------+----------------+-------------+-------+
+	|  1 | shs      | shs@gmail.com  | 01122334466 | 123   |
+	|  2 | omar     | omar@gmail.com | 01122339950 | 321   |
+	+----+----------+----------------+-------------+-------+
